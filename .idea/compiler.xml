@@ -6,7 +6,9 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="ssm_user_perssion_system_manager" />
+        <module name="jianyi_ssm_service" />
+        <module name="jianyi_ssm_dao" />
+        <module name="jianyi_ssm_web" />
       </profile>
     </annotationProcessing>
   </component>

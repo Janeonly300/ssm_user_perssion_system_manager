@@ -7,7 +7,12 @@
   <groupId>com.atjianyi</groupId>
   <artifactId>ssm_user_perssion_system_manager</artifactId>
   <version>1.0-SNAPSHOT</version>
-  <packaging>war</packaging>
+  <modules>
+    <module>jianyi_ssm_dao</module>
+    <module>jianyi_ssm_service</module>
+    <module>jianyi_ssm_web</module>
+  </modules>
+  <packaging>pom</packaging>
 
   <name>ssm_user_perssion_system_manager Maven Webapp</name>
   <!-- FIXME change it to the project's website -->
