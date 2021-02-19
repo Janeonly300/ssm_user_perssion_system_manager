@@ -8,13 +8,13 @@ import java.util.Date;
  * @Date 2021/2/19 16:14
  **/
 public class Product {
-    private String id;
-    private String product_num;
-    private String product_name;
-    private String start_city_name;
-    private Date start_date_time;
-    private Double product_price;
-    private int product_status;
+    private String id; //唯一UUID
+    private String product_num; // 产品编号
+    private String product_name; //产品名称
+    private String start_city_name; //城市名称
+    private Date start_date_time; //出发时间
+    private Double product_price; // 价格
+    private int product_status; // 状态 1开0关
 
     @Override
     public String toString() {
