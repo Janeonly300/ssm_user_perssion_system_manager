@@ -5,15 +5,15 @@
         https://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/context
         https://www.springframework.org/schema/context/spring-context.xsd">
-
+<context:property-placeholder location="classpath:jdbc-config.properties"/>
 <!--  创建数据源  -->
     <bean id="ds" class="com.alibaba.druid.pool.DruidDataSourceFactory" factory-method="createDataSource">
         <constructor-arg name="properties">
             <props>
-                <prop key="url">jdbc:mysql://localhost:3306/ssm_system_manager</prop>
-                <prop key="driverClass">com.mysql.jdbc.Driver</prop>
-                <prop key="username">root</prop>
-                <prop key="password">root</prop>
+                <prop key="url">${url}</prop>
+                <prop key="driverClass">${driverClass}</prop>
+                <prop key="username">${username}</prop>
+                <prop key="password">${password}</prop>
             </props>
         </constructor-arg>
     </bean>
