@@ -13,8 +13,26 @@ public class Product {
     private String product_name; //产品名称
     private String start_city_name; //城市名称
     private Date start_date_time; //出发时间
+    private String forMatTimeStr; //格式化出发时间
     private Double product_price; // 价格
     private int product_status; // 状态 1开0关
+    private String formatStatusStr ; //格式化状态
+
+    public String getForMatTimeStr() {
+        return forMatTimeStr;
+    }
+
+    public void setForMatTimeStr(String forMatTimeStr) {
+        this.forMatTimeStr = forMatTimeStr;
+    }
+
+    public String getFormatStatusStr() {
+        return formatStatusStr;
+    }
+
+    public void setFormatStatusStr(String formatStatusStr) {
+        this.formatStatusStr = formatStatusStr;
+    }
 
     @Override
     public String toString() {

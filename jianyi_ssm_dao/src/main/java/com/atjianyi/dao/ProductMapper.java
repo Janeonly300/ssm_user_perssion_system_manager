@@ -13,5 +13,5 @@ import java.util.List;
 @Repository
 public interface ProductMapper {
 
- List<Product> findAllProducts();
+ List<Product> findAllProducts() throws Exception;
 }

@@ -17,7 +17,7 @@ import java.util.List;
 public class ProductServiceImpl implements ProductService {
     @Autowired
     private ProductMapper mapper;
-    public List<Product> findAllProducts(){
+    public List<Product> findAllProducts() throws Exception {
         return mapper.findAllProducts();
     }
 }
