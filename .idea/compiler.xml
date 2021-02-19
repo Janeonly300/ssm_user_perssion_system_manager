@@ -11,5 +11,8 @@
         <module name="jianyi_ssm_web" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="a" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
 </project>
