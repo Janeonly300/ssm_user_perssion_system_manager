@@ -3,8 +3,17 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.atjianyi.dao.ProductMapper">
-
-    <select id="findAllProducts" resultType="product" >
+    <resultMap id="productMapper" type="product">
+        <id property="id" column="id"/>
+        <result property="productNum" column="product_num"/>
+        <result property="productName" column="product_name"/>
+        <result property="startCityName" column="start_city_name"/>
+        <result property="startDateTime" column="start_date_time"/>
+        <result property="productPrice" column="product_price"/>
+        <result property="productDesc" column="product_desc"/>
+        <result property="productStatus" column="product_status"/>
+    </resultMap>
+    <select id="findAllProducts" resultMap="productMapper" >
         select * from t_product;
     </select>
 </mapper>

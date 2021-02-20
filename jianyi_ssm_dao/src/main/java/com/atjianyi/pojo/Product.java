@@ -8,42 +8,26 @@ import java.util.Date;
  * @Date 2021/2/19 16:14
  **/
 public class Product {
-    private String id; //唯一UUID
-    private String product_num; // 产品编号
-    private String product_name; //产品名称
-    private String start_city_name; //城市名称
-    private Date start_date_time; //出发时间
-    private String forMatTimeStr; //格式化出发时间
-    private Double product_price; // 价格
-    private int product_status; // 状态 1开0关
-    private String formatStatusStr ; //格式化状态
-
-    public String getForMatTimeStr() {
-        return forMatTimeStr;
-    }
-
-    public void setForMatTimeStr(String forMatTimeStr) {
-        this.forMatTimeStr = forMatTimeStr;
-    }
-
-    public String getFormatStatusStr() {
-        return formatStatusStr;
-    }
-
-    public void setFormatStatusStr(String formatStatusStr) {
-        this.formatStatusStr = formatStatusStr;
-    }
+   private String id;
+   private String productNum;
+   private String productName;
+   private String startCityName;
+   private String startDateTime;
+   private double productPrice;
+   private String productDesc;
+   private String productStatus;
 
     @Override
     public String toString() {
         return "Product{" +
-                "id='" + id + '\'' +
-                ", product_num='" + product_num + '\'' +
-                ", product_name='" + product_name + '\'' +
-                ", start_city_name='" + start_city_name + '\'' +
-                ", start_date_time=" + start_date_time +
-                ", product_price=" + product_price +
-                ", product_status=" + product_status +
+                "id=" + id +
+                ", productNum='" + productNum + '\'' +
+                ", productName='" + productName + '\'' +
+                ", startCityName='" + startCityName + '\'' +
+                ", startDateTime='" + startDateTime + '\'' +
+                ", productPrice=" + productPrice +
+                ", productDesc='" + productDesc + '\'' +
+                ", productStatus='" + productStatus + '\'' +
                 '}';
     }
 
@@ -55,64 +39,59 @@ public class Product {
         this.id = id;
     }
 
-    public String getProduct_num() {
-        return product_num;
+    public String getProductNum() {
+        return productNum;
     }
 
-    public void setProduct_num(String product_num) {
-        this.product_num = product_num;
+    public void setProductNum(String productNum) {
+        this.productNum = productNum;
     }
 
-    public String getProduct_name() {
-        return product_name;
+    public String getProductName() {
+        return productName;
     }
 
-    public void setProduct_name(String product_name) {
-        this.product_name = product_name;
+    public void setProductName(String productName) {
+        this.productName = productName;
     }
 
-    public String getStart_city_name() {
-        return start_city_name;
+    public String getStartCityName() {
+        return startCityName;
     }
 
-    public void setStart_city_name(String start_city_name) {
-        this.start_city_name = start_city_name;
+    public void setStartCityName(String startCityName) {
+        this.startCityName = startCityName;
     }
 
-    public Date getStart_date_time() {
-        return start_date_time;
+    public String getStartDateTime() {
+        return startDateTime;
     }
 
-    public void setStart_date_time(Date start_date_time) {
-        this.start_date_time = start_date_time;
+    public void setStartDateTime(String startDateTime) {
+        this.startDateTime = startDateTime;
     }
 
-    public Double getProduct_price() {
-        return product_price;
+    public double getProductPrice() {
+        return productPrice;
     }
 
-    public void setProduct_price(Double product_price) {
-        this.product_price = product_price;
+    public void setProductPrice(double productPrice) {
+        this.productPrice = productPrice;
     }
 
-    public int getProduct_status() {
-        return product_status;
+    public String getProductDesc() {
+        return productDesc;
     }
 
-    public void setProduct_status(int product_status) {
-        this.product_status = product_status;
+    public void setProductDesc(String productDesc) {
+        this.productDesc = productDesc;
     }
 
-    public Product() {
+    public String getProductStatus() {
+        return productStatus;
     }
 
-    public Product(String id, String product_num, String product_name, String start_city_name, Date start_date_time, Double product_price, int product_status) {
-        this.id = id;
-        this.product_num = product_num;
-        this.product_name = product_name;
-        this.start_city_name = start_city_name;
-        this.start_date_time = start_date_time;
-        this.product_price = product_price;
-        this.product_status = product_status;
+    public void setProductStatus(String productStatus) {
+        this.productStatus = productStatus;
     }
 }
