@@ -21,13 +21,13 @@ public class ProductController {
     @Autowired
     private ProductService productService;
 
-    @RequestMapping("/findAllProducts")
+    @RequestMapping("/findAllProducts.do")
     public ModelAndView findAllProduct() throws Exception {
         /**
          * 查询数据
          */
         List<Product> allProducts = productService.findAllProducts();
-
+        System.out.println("执行。");
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.addObject("productList",allProducts);
         modelAndView.setViewName("product-list");
