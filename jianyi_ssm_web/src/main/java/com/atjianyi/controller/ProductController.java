@@ -1,9 +1,13 @@
 package com.atjianyi.controller;
 
+import com.atjianyi.pojo.Product;
 import com.atjianyi.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
+
+import java.util.List;
 
 /**
  * @author 简一
@@ -18,8 +22,15 @@ public class ProductController {
     private ProductService productService;
 
     @RequestMapping("/findAllProducts")
-    public String findAllProduct(){
-        System.out.println(productService.findAllProducts());
-        return "ok.jsp";
+    public ModelAndView findAllProduct() throws Exception {
+        /**
+         * 查询数据
+         */
+        List<Product> allProducts = productService.findAllProducts();
+
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.addObject("productList",allProducts);
+        modelAndView.setViewName("product-list");
+        return modelAndView;
     }
 }

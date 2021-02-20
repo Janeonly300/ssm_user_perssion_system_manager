@@ -48,7 +48,7 @@
       <element id="directory" name="META-INF">
         <element id="file-copy" path="$PROJECT_DIR$/jianyi_ssm_web/target/jianyi_ssm_web/META-INF/MANIFEST.MF" />
       </element>
-      <element id="javaee-facet-resources" facet="a/web/Web" />
+      <element id="javaee-facet-resources" facet="jianyi_ssm_web/web/Web" />
     </root>
   </artifact>
 </component>
