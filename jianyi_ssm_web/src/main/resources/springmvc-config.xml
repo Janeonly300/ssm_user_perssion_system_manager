@@ -22,5 +22,8 @@
     <mvc:annotation-driven/>
 
 <!--  配置静态资源过滤  -->
+    <mvc:resources mapping="/css/**" location="/css/"/>
+    <mvc:resources mapping="/img/**" location="/img/"/>
+    <mvc:resources mapping="/plugins/**" location="/plugins/"/>
 
 </beans>
