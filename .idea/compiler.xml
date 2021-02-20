@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="jianyi_ssm_service" />
         <module name="jianyi_ssm_dao" />
+        <module name="jianyi_ssm_utils" />
         <module name="jianyi_ssm_web" />
       </profile>
     </annotationProcessing>

@@ -1,5 +1,7 @@
 package com.atjianyi.pojo;
 
+import com.atjianyi.utils.DateAndStrUtils;
+
 import java.util.Date;
 
 /**
@@ -8,14 +10,43 @@ import java.util.Date;
  * @Date 2021/2/19 16:14
  **/
 public class Product {
-   private String id;
-   private String productNum;
-   private String productName;
-   private String startCityName;
-   private String startDateTime;
-   private double productPrice;
-   private String productDesc;
-   private String productStatus;
+    private String id; // uuid
+    private String productNum; //编号
+    private String productName; // 产品名称
+    private String startCityName;//城市名称
+    private Date startDateTime;//开始时间
+    private double productPrice;//产品价格
+    private String productDesc;//描述
+    private String productStatus;//状态
+    private String startDateStr; // 格式化时间
+    private String statusStr; //格式化状态
+
+    public String getStartDateStr() {
+        if(startDateTime !=null){
+            startDateStr = DateAndStrUtils.dateToStr(startDateTime,"yyyy年MM月dd日-HH时mm分:ss秒");
+        }
+        return startDateStr;
+    }
+
+    public void setStartDateStr(String startDateStr) {
+        this.startDateStr = startDateStr;
+    }
+
+    public String getStatusStr() {
+        if(productStatus !=null){
+            if(productStatus.equals("0")){
+                statusStr =  "关闭中...";
+            }
+            if(productStatus.equals("1")){
+                statusStr =  "售票中...";
+            }
+        }
+        return statusStr;
+    }
+
+    public void setStatusStr(String statusStr) {
+        this.statusStr = statusStr;
+    }
 
     @Override
     public String toString() {
@@ -63,11 +94,11 @@ public class Product {
         this.startCityName = startCityName;
     }
 
-    public String getStartDateTime() {
+    public Date getStartDateTime() {
         return startDateTime;
     }
 
-    public void setStartDateTime(String startDateTime) {
+    public void setStartDateTime(Date startDateTime) {
         this.startDateTime = startDateTime;
     }
 

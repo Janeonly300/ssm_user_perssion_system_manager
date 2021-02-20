@@ -250,10 +250,10 @@
 											<td>${product.productNum}</td>
 											<td>${product.productName}</td>
 											<td>${product.startCityName}</td>
-											<td>${product.startDateTime}</td>
+											<td>${product.startDateStr}</td>
 											<td class="text-center">${product.productPrice}</td>
 											<td>${product.productDesc}</td>
-											<td>${product.productStatus}</td>
+											<td>${product.statusStr}</td>
 
 											<td class="text-center">
 												<button type="button" class="btn bg-olive btn-xs">订单</button>

@@ -11,6 +11,7 @@
     <module>jianyi_ssm_dao</module>
     <module>jianyi_ssm_service</module>
       <module>jianyi_ssm_web</module>
+      <module>jianyi_ssm_utils</module>
   </modules>
   <packaging>pom</packaging>
 

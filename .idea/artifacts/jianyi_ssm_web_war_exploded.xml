@@ -20,6 +20,9 @@
           <element id="archive" name="jianyi_ssm_dao-1.0-SNAPSHOT.jar">
             <element id="module-output" name="jianyi_ssm_dao" />
           </element>
+          <element id="archive" name="jianyi_ssm_utils-1.0-SNAPSHOT.jar">
+            <element id="module-output" name="jianyi_ssm_utils" />
+          </element>
           <element id="library" level="project" name="Maven: org.aspectj:aspectjweaver:1.6.8" />
           <element id="library" level="project" name="Maven: org.springframework:spring-context:5.2.2.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-aop:5.2.2.RELEASE" />
