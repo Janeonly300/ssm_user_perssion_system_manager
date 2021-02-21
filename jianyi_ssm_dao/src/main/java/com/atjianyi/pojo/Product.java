@@ -1,6 +1,7 @@
 package com.atjianyi.pojo;
 
 import com.atjianyi.utils.DateAndStrUtils;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import java.util.Date;
 
@@ -14,6 +15,7 @@ public class Product {
     private String productNum; //编号
     private String productName; // 产品名称
     private String startCityName;//城市名称
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm")
     private Date startDateTime;//开始时间
     private double productPrice;//产品价格
     private String productDesc;//描述

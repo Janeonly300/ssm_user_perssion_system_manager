@@ -16,4 +16,9 @@
     <select id="findAllProducts" resultMap="productMapper" >
         select * from t_product;
     </select>
+    
+    <insert id="insertProduct" parameterType="product">
+        insert into t_product(id, product_num, product_name, start_city_name, start_date_time, product_price, product_desc, product_status)
+        values(#{id},#{productNum},#{productName},#{startCityName},#{startDateTime},#{productPrice},#{productDesc},#{productStatus});
+    </insert>
 </mapper>

@@ -24,7 +24,7 @@
 <!-- Date Picker -->
 <!-- Daterange picker -->
 <!-- Bootstrap time Picker -->
-<!--<link rel="stylesheet" href=".${pageContext.request.contextPath}/.${pageContext.request.contextPath}/.${pageContext.request.contextPath}/plugins/timepicker/bootstrap-timepicker.min.css">-->
+<!--<link rel="stylesheet" href="${pageContext.request.contextPath}/${pageContext.request.contextPath}/${pageContext.request.contextPath}/plugins/timepicker/bootstrap-timepicker.min.css">-->
 <!-- bootstrap wysihtml5 - text editor -->
 <!--数据表格-->
 <!-- 表格树 -->
@@ -64,7 +64,7 @@
 <!-- select2 -->
 <!-- bootstrap color picker -->
 <!-- bootstrap time picker -->
-<!--<script src=".${pageContext.request.contextPath}/.${pageContext.request.contextPath}/.${pageContext.request.contextPath}/plugins/timepicker/bootstrap-timepicker.min.js"></script>-->
+<!--<script src="${pageContext.request.contextPath}/${pageContext.request.contextPath}/${pageContext.request.contextPath}/plugins/timepicker/bootstrap-timepicker.min.js"></script>-->
 <!-- Bootstrap WYSIHTML5 -->
 <!--bootstrap-markdown-->
 <!-- CK Editor -->
@@ -83,47 +83,47 @@
 <!-- 页面meta /-->
 
 <link rel="stylesheet"
-	href=".${pageContext.request.contextPath}/plugins/bootstrap/css/bootstrap.min.css">
+	href="${pageContext.request.contextPath}/plugins/bootstrap/css/bootstrap.min.css">
 <link rel="stylesheet"
-	href=".${pageContext.request.contextPath}/plugins/font-awesome/css/font-awesome.min.css">
+	href="${pageContext.request.contextPath}/plugins/font-awesome/css/font-awesome.min.css">
 <link rel="stylesheet"
-	href=".${pageContext.request.contextPath}/plugins/ionicons/css/ionicons.min.css">
+	href="${pageContext.request.contextPath}/plugins/ionicons/css/ionicons.min.css">
 <link rel="stylesheet"
-	href=".${pageContext.request.contextPath}/plugins/iCheck/square/blue.css">
+	href="${pageContext.request.contextPath}/plugins/iCheck/square/blue.css">
 <link rel="stylesheet"
-	href=".${pageContext.request.contextPath}/plugins/morris/morris.css">
+	href="${pageContext.request.contextPath}/plugins/morris/morris.css">
 <link rel="stylesheet"
-	href=".${pageContext.request.contextPath}/plugins/jvectormap/jquery-jvectormap-1.2.2.css">
+	href="${pageContext.request.contextPath}/plugins/jvectormap/jquery-jvectormap-1.2.2.css">
 <link rel="stylesheet"
-	href=".${pageContext.request.contextPath}/plugins/datepicker/datepicker3.css">
+	href="${pageContext.request.contextPath}/plugins/datepicker/datepicker3.css">
 <link rel="stylesheet"
-	href=".${pageContext.request.contextPath}/plugins/daterangepicker/daterangepicker.css">
+	href="${pageContext.request.contextPath}/plugins/daterangepicker/daterangepicker.css">
 <link rel="stylesheet"
-	href=".${pageContext.request.contextPath}/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
+	href="${pageContext.request.contextPath}/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
 <link rel="stylesheet"
-	href=".${pageContext.request.contextPath}/plugins/datatables/dataTables.bootstrap.css">
+	href="${pageContext.request.contextPath}/plugins/datatables/dataTables.bootstrap.css">
 <link rel="stylesheet"
-	href=".${pageContext.request.contextPath}/plugins/treeTable/jquery.treetable.css">
+	href="${pageContext.request.contextPath}/plugins/treeTable/jquery.treetable.css">
 <link rel="stylesheet"
-	href=".${pageContext.request.contextPath}/plugins/treeTable/jquery.treetable.theme.default.css">
+	href="${pageContext.request.contextPath}/plugins/treeTable/jquery.treetable.theme.default.css">
 <link rel="stylesheet"
-	href=".${pageContext.request.contextPath}/plugins/select2/select2.css">
+	href="${pageContext.request.contextPath}/plugins/select2/select2.css">
 <link rel="stylesheet"
-	href=".${pageContext.request.contextPath}/plugins/colorpicker/bootstrap-colorpicker.min.css">
+	href="${pageContext.request.contextPath}/plugins/colorpicker/bootstrap-colorpicker.min.css">
 <link rel="stylesheet"
-	href=".${pageContext.request.contextPath}/plugins/bootstrap-markdown/css/bootstrap-markdown.min.css">
+	href="${pageContext.request.contextPath}/plugins/bootstrap-markdown/css/bootstrap-markdown.min.css">
 <link rel="stylesheet"
-	href=".${pageContext.request.contextPath}/plugins/adminLTE/css/AdminLTE.css">
+	href="${pageContext.request.contextPath}/plugins/adminLTE/css/AdminLTE.css">
 <link rel="stylesheet"
-	href=".${pageContext.request.contextPath}/plugins/adminLTE/css/skins/_all-skins.min.css">
+	href="${pageContext.request.contextPath}/plugins/adminLTE/css/skins/_all-skins.min.css">
 <link rel="stylesheet"
-	href=".${pageContext.request.contextPath}/css/style.css">
+	href="${pageContext.request.contextPath}/css/style.css">
 <link rel="stylesheet"
-	href=".${pageContext.request.contextPath}/plugins/ionslider/ion.rangeSlider.css">
+	href="${pageContext.request.contextPath}/plugins/ionslider/ion.rangeSlider.css">
 <link rel="stylesheet"
-	href=".${pageContext.request.contextPath}/plugins/ionslider/ion.rangeSlider.skinNice.css">
+	href="${pageContext.request.contextPath}/plugins/ionslider/ion.rangeSlider.skinNice.css">
 <link rel="stylesheet"
-	href=".${pageContext.request.contextPath}/plugins/bootstrap-slider/slider.css">
+	href="${pageContext.request.contextPath}/plugins/bootstrap-slider/slider.css">
 </head>
 
 <body class="hold-transition skin-blue sidebar-mini">
@@ -141,7 +141,7 @@
 		<!-- 内容区域 -->
 		<div class="content-wrapper">
 
-			<img src=".${pageContext.request.contextPath}/img/center.jpg"
+			<img src="${pageContext.request.contextPath}/img/center.jpg"
 				width="100%" height="100%" />
 
 		</div>

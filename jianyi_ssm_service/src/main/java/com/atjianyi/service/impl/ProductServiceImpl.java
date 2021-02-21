@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.UUID;
 
 /**
  * @author 简一
@@ -17,6 +18,16 @@ import java.util.List;
 public class ProductServiceImpl implements ProductService {
     @Autowired
     private ProductMapper mapper;
+
+    @Override
+    public void saveProduct(Product product) throws Exception {
+        /**
+         * 为商品生成uuid
+         */
+        product.setId(UUID.randomUUID().toString().replace("-",""));
+        mapper.insertProduct(product);
+    }
+
     public List<Product> findAllProducts() throws Exception {
         return mapper.findAllProducts();
     }

@@ -7,6 +7,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.util.List;
 
 /**
@@ -21,11 +23,19 @@ public class ProductController {
     @Autowired
     private ProductService productService;
 
+    @RequestMapping("/saveProduct.do")
+    public void saveProduct(Product product, HttpServletRequest req, HttpServletResponse resp) throws Exception {
+        productService.saveProduct(product);
+        req.getRequestDispatcher("findAllProducts.do").forward(req,resp);
+    }
+
+    /**
+     * 查询所有商品
+     * @return
+     * @throws Exception
+     */
     @RequestMapping("/findAllProducts.do")
     public ModelAndView findAllProduct() throws Exception {
-        /**
-         * 查询数据
-         */
         List<Product> allProducts = productService.findAllProducts();
         System.out.println("执行。");
         ModelAndView modelAndView = new ModelAndView();

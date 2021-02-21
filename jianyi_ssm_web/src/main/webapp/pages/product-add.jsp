@@ -85,13 +85,13 @@
 				<li><a href="${pageContext.request.contextPath}/index.jsp"><i
 						class="fa fa-dashboard"></i> 首页</a></li>
 				<li><a
-					href="${pageContext.request.contextPath}/product/findAll.do">产品管理</a></li>
+					href="${pageContext.request.contextPath}/product/findAllProducts.do">产品管理</a></li>
 				<li class="active">产品表单</li>
 			</ol>
 			</section>
 			<!-- 内容头部 /-->
 
-			<form action="${pageContext.request.contextPath}/product/save.do"
+			<form action="${pageContext.request.contextPath}/product/saveProduct.do"
 				method="post">
 				<!-- 正文区域 -->
 				<section class="content"> <!--产品信息-->
@@ -117,14 +117,12 @@
 									<i class="fa fa-calendar"></i>
 								</div>
 								<input type="text" class="form-control pull-right"
-									id="datepicker-a3" name="departureTime">
+									id="datepicker-a3" name="startDateTime">
 							</div>
 						</div>
-
-
 						<div class="col-md-2 title">出发城市</div>
 						<div class="col-md-4 data">
-							<input type="text" class="form-control" name="cityName"
+							<input type="text" class="form-control" name="startCityName"
 								placeholder="出发城市" value="">
 						</div>
 

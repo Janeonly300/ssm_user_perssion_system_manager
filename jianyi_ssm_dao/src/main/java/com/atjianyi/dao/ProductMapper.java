@@ -14,4 +14,6 @@ import java.util.List;
 public interface ProductMapper {
 
  List<Product> findAllProducts() throws Exception;
+
+ void insertProduct(Product product) throws Exception;
 }
