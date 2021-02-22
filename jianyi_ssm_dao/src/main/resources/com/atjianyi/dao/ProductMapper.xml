@@ -21,4 +21,8 @@
         insert into t_product(id, product_num, product_name, start_city_name, start_date_time, product_price, product_desc, product_status)
         values(#{id},#{productNum},#{productName},#{startCityName},#{startDateTime},#{productPrice},#{productDesc},#{productStatus});
     </insert>
+
+    <select id="findProductById" resultMap="productMapper" parameterType="string">
+        select * from t_product where id = #{v}
+    </select>
 </mapper>

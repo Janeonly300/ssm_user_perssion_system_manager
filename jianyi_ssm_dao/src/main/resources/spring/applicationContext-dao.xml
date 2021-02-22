@@ -5,7 +5,7 @@
         https://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/context
         https://www.springframework.org/schema/context/spring-context.xsd">
-<context:property-placeholder location="classpath:jdbc-config.properties" />
+<context:component-scan base-package="com.atjianyi"/>
 <!--  创建数据源  -->
     <bean id="ds" class="com.alibaba.druid.pool.DruidDataSourceFactory" factory-method="createDataSource">
         <constructor-arg name="properties">
@@ -21,6 +21,19 @@
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
         <property name="dataSource" ref="ds"/>
         <property name="typeAliasesPackage" value="com.atjianyi.pojo"/>
+<!--    加入插件    -->
+        <property name="plugins">
+            <set>
+                <bean class="com.github.pagehelper.PageInterceptor">
+                    <property name="properties">
+                        <props>
+                            <prop key="helperDialect">mysql</prop>
+                            <prop key="reasonable">true</prop>
+                        </props>
+                    </property>
+                </bean>
+            </set>
+        </property>
     </bean>
 
 <!--  配置包扫描  -->

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.atjianyi.dao.OrdersMapper">
+    <resultMap id="ordersMap" type="orders">
+        <id property="id" column="id"/>
+        <result property="ordersNum" column="orders_num"/>
+        <result property="ordersTime" column="orders_time"/>
+        <result property="ordersPeopleCount" column="orders_people_count"/>
+        <result property="ordersDesc" column="orders_desc"/>
+        <result property="ordersPayType" column="orders_pay_type"/>
+        <result property="ordersStatus" column="ordes_status"/>
+        <association property="product" column="product_id" javaType="product" select="com.atjianyi.dao.ProductMapper.findProductById"/>
+        <association property="member" column="member_id" javaType="member" select="com.atjianyi.dao.MemberMapper.findMemberById"/>
+    </resultMap>
+    <select id="findAllOrders" resultMap="ordersMap">
+        select  * from t_orders
+    </select>
+</mapper>

@@ -1,9 +1,0 @@
-0:0:0:0:0:0:0:1 - - [20/Feb/2021:21:32:47 +0800] "GET / HTTP/1.1" 200 12224 http-bio-8080-exec-1 1068
-0:0:0:0:0:0:0:1 - - [20/Feb/2021:21:41:05 +0800] "GET / HTTP/1.1" 200 12224 http-bio-8080-exec-3 125
-0:0:0:0:0:0:0:1 - - [20/Feb/2021:21:41:08 +0800] "GET /orders/findAll.do?page=1&size=4 HTTP/1.1" 404 949 http-bio-8080-exec-4 5
-0:0:0:0:0:0:0:1 - - [20/Feb/2021:21:43:52 +0800] "GET / HTTP/1.1" 200 12224 http-bio-8080-exec-2 743
-0:0:0:0:0:0:0:1 - - [20/Feb/2021:21:48:46 +0800] "GET / HTTP/1.1" 200 12224 http-bio-8080-exec-1 128
-0:0:0:0:0:0:0:1 - - [20/Feb/2021:21:48:47 +0800] "GET /product/findAllProducts.do HTTP/1.1" 500 6152 http-bio-8080-exec-3 1133
-0:0:0:0:0:0:0:1 - - [20/Feb/2021:21:48:48 +0800] "GET /product/findAllProducts.do HTTP/1.1" 500 6152 http-bio-8080-exec-2 10
-0:0:0:0:0:0:0:1 - - [20/Feb/2021:21:51:16 +0800] "GET / HTTP/1.1" 200 12224 http-bio-8080-exec-1 142
-0:0:0:0:0:0:0:1 - - [20/Feb/2021:21:51:19 +0800] "GET /product/findAllProducts.do HTTP/1.1" 200 20015 http-bio-8080-exec-3 895
