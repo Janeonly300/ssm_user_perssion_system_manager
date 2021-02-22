@@ -26,7 +26,7 @@ DROP TABLE IF EXISTS t_member;
 CREATE TABLE t_member(
 	id VARCHAR(36) PRIMARY KEY , -- 主键uuid
 	member_name VARCHAR(20) , -- 姓名
-	member_nock_name VARCHAR(20) , -- 昵称
+	member_nick_name VARCHAR(20) , -- 昵称
 	member_phone VARCHAR(20) , -- 电话
 	member_email VARCHAR(50)  -- 邮箱
 )ENGINE=INNODB DEFAULT CHARSET utf8;
@@ -54,7 +54,7 @@ CREATE TABLE t_orders(
 	orders_num VARCHAR(20) NOT NULL UNIQUE , -- 订单编号
 	orders_time DATETIME, -- 下单时间
 	orders_people_count INT  ,  -- 出行人数，
-	orders_desc INT , -- 订单描述
+	orders_desc VARCHAR(50) , -- 订单描述
 	orders_pay_type INT , -- 支付方式 |0支付宝|1微信|2其他
 	ordes_status INT , -- 支付状态，|0 已经支付|2没有支付
 	product_id VARCHAR(36) , -- 产品id
@@ -66,7 +66,7 @@ CREATE TABLE t_orders(
 /**
 	旅客和订单中间表
 **/
-DROP TABLE IF EXISTS t_orders_traveller();
+DROP TABLE IF EXISTS t_orders_traveller;
 CREATE TABLE t_orders_traveller(
 	id INT PRIMARY KEY AUTO_INCREMENT, 
 	orders_id VARCHAR(36) , 
