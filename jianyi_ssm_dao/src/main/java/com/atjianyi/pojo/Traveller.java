@@ -10,9 +10,55 @@ public class Traveller {
     private String travelerName;//旅客姓名
     private String travellerSex;//旅客性别
     private String travellerPhone;//旅客电话
-    private int travellerCredentialsType;//证件类型|0身份证|1护照|2军官证|
+    private Integer travellerCredentialsType;//证件类型|0身份证|1护照|2军官证|
+    private String travellerCredentialsTypeStr;//证件类型格式化
     private String travellerCredentialsNum;//证件号码
-    private int travellerType;//类型 |0成人|1儿童
+    private Integer travellerType;//类型 |0成人|1儿童
+    private String travellerTypeStr; //类型格式化
+
+    public void setTravellerCredentialsType(Integer travellerCredentialsType) {
+        this.travellerCredentialsType = travellerCredentialsType;
+    }
+
+    public String getTravellerCredentialsTypeStr() {
+        if(travellerCredentialsType!=null){
+            switch (travellerCredentialsType){
+                case 0:
+                    travellerCredentialsTypeStr = "身份证件";
+                    break;
+                case 1:
+                    travellerCredentialsTypeStr = "护照";
+                    break;
+                case 2:
+                    travellerCredentialsTypeStr = "军官证";
+                    break;
+            }
+        }
+        return travellerCredentialsTypeStr;
+    }
+
+    public void setTravellerCredentialsTypeStr(String travellerCredentialsTypeStr) {
+        this.travellerCredentialsTypeStr = travellerCredentialsTypeStr;
+    }
+
+    public void setTravellerType(Integer travellerType) {
+        this.travellerType = travellerType;
+    }
+
+    public String getTravellerTypeStr() {
+        if(travellerType!=null){
+            if(travellerType == 0){
+                travellerTypeStr = "成人";
+            }else if (travellerType == 1){
+                travellerTypeStr = "儿童";
+            }
+        }
+        return travellerTypeStr;
+    }
+
+    public void setTravellerTypeStr(String travellerTypeStr) {
+        this.travellerTypeStr = travellerTypeStr;
+    }
 
     @Override
     public String toString() {

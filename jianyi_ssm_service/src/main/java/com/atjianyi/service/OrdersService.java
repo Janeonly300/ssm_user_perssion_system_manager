@@ -23,4 +23,11 @@ public interface OrdersService {
      * @return
      */
     List<Orders> findAllOrdersByPage(int curPage,int size) throws Exception;
+
+    /**
+     * 查询订单详细信息
+     * @param orderId
+     * @return
+     */
+    Orders findOrderList(String orderId) throws Exception;
 }

@@ -6,4 +6,10 @@
     <typeAliases>
         <package name="com.atjianyi.pojo"/>
     </typeAliases>
+
+    <settings>
+        <!--开启mybatis支持延迟加载-->
+        <setting name="lazyLoadingEnabled" value="true"/>
+        <setting name="aggressiveLazyLoading" value="false"/>
+    </settings>
 </configuration>

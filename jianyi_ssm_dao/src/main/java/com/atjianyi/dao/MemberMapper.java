@@ -12,7 +12,7 @@ import org.springframework.stereotype.Repository;
 public interface MemberMapper {
 
     /**
-     * 根据id找寻会员
+     * 根据id找会员
      * @param id
      * @return
      */

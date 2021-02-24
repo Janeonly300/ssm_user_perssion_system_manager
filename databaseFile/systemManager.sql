@@ -74,3 +74,11 @@ CREATE TABLE t_orders_traveller(
 	FOREIGN KEY (traveller_id) REFERENCES t_traveller(id),
 	FOREIGN KEY (orders_id) REFERENCES t_orders(id)
 )ENGINE=INNODB DEFAULT CHARSET utf8;
+
+SELECT o.`id`, o.`orders_time`,t.`traveller_name` FROM 
+t_orders o 
+JOIN t_orders_traveller ot 
+ON o.`id` = ot.`orders_id` 
+JOIN t_traveller t 
+ON t.`id` = ot.`traveller_id`  WHERE ot.`orders_id` = '3rgbsdfghrf532424122'  ;
+

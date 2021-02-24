@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.atjianyi.dao.TravellerMapper">
+    <resultMap id="travellerBean" type="traveller">
+        <id property="id" column="id"/>
+        <result property="travelerName" column="traveller_name"/>
+        <result property="travellerSex" column="traveller_sex"/>
+        <result property="travellerPhone" column="traveller_phone"/>
+        <result property="travellerCredentialsType" column="traveller_credentials_type"/>
+        <result property="travellerCredentialsNum" column="traveller_credentials_num"/>
+        <result property="travellerType" column="traveller_type"/>
+    </resultMap>
+
+    <select id="findTravellerByOrderId" parameterType="string" resultMap="travellerBean">
+        SELECT * FROM
+        t_orders o
+        JOIN t_orders_traveller ot
+        ON o.`id` = ot.`orders_id`
+        JOIN t_traveller t
+        ON t.`id` = ot.`traveller_id` WHERE ot.`orders_id` = #{v};
+    </select>
+
+</mapper>

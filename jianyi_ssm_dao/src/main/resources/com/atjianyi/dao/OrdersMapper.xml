@@ -12,9 +12,19 @@
         <result property="ordersPayType" column="orders_pay_type"/>
         <result property="ordersStatus" column="ordes_status"/>
         <association property="product" column="product_id" javaType="product" select="com.atjianyi.dao.ProductMapper.findProductById"/>
-        <association property="member" column="member_id" javaType="member" select="com.atjianyi.dao.MemberMapper.findMemberById"/>
     </resultMap>
+
+<!--订单详情-->
+    <resultMap id="orderListMap" extends="ordersMap" type="orders">
+        <association property="member" column="member_id" javaType="member" select="com.atjianyi.dao.MemberMapper.findMemberById"/>
+        <collection property="travellers" column="id" ofType="traveller" select="com.atjianyi.dao.TravellerMapper.findTravellerByOrderId"/>
+    </resultMap>
+
     <select id="findAllOrders" resultMap="ordersMap">
         select  * from t_orders
+    </select>
+    
+    <select id="findOrderList" parameterType="string" resultMap="orderListMap">
+        select * from t_orders where id = #{v}
     </select>
 </mapper>

@@ -19,4 +19,11 @@ public interface OrdersMapper {
      * @throws Exception
      */
     public List<Orders> findAllOrders() throws Exception;
+
+    /**
+     * 查询订单详细信息
+     * @return
+     * @throws Exception
+     */
+    Orders findOrderList(String orderId) throws Exception;
 }

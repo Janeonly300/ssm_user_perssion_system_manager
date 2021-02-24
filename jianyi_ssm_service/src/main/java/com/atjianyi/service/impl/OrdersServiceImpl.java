@@ -30,4 +30,12 @@ public class OrdersServiceImpl implements OrdersService {
         List<Orders> allOrders = mapper.findAllOrders();
         return allOrders;
     }
+
+    @Override
+    public Orders findOrderList(String orderId) throws Exception {
+        Orders orderList = mapper.findOrderList(orderId);
+        return orderList;
+    }
+
+
 }

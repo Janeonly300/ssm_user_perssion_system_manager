@@ -43,6 +43,17 @@ public class OrdersController {
         modelAndView.addObject("pageInfo",pageInfo);
         modelAndView.setViewName("orders-list");
         return modelAndView;
-
     }
+
+    @RequestMapping("/findOAndTAndM.do")
+    public ModelAndView findById(@RequestParam(name = "id") String id) throws Exception {
+        Orders orders = ordersService.findOrderList(id);
+        System.out.println(orders);
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.addObject(orders);
+        modelAndView.setViewName("orders-show");
+        return modelAndView;
+    }
+
+
 }
