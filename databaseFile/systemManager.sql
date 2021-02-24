@@ -75,10 +75,69 @@ CREATE TABLE t_orders_traveller(
 	FOREIGN KEY (orders_id) REFERENCES t_orders(id)
 )ENGINE=INNODB DEFAULT CHARSET utf8;
 
-SELECT o.`id`, o.`orders_time`,t.`traveller_name` FROM 
+SELECT * FROM 
 t_orders o 
 JOIN t_orders_traveller ot 
 ON o.`id` = ot.`orders_id` 
 JOIN t_traveller t 
 ON t.`id` = ot.`traveller_id`  WHERE ot.`orders_id` = '3rgbsdfghrf532424122'  ;
+
+
+/**
+	用户表
+**/
+DROP TABLE IF EXISTS t_users;
+CREATE TABLE t_users(
+	id VARCHAR(50) PRIMARY KEY , -- uuid
+	users_name VARCHAR(20) , -- 用户名称
+	user_email VARCHAR(50) NOT NULL , -- 用户邮箱
+	user_pwd VARCHAR(50) NOT NULL , -- 用户密码
+	user_phone_num VARCHAR(20) , -- 用户手机号码
+	user_status INT -- 状态
+)ENGINE=INNODB DEFAULT CHARSET utf8;
+
+/**
+	角色表
+**/
+DROP TABLE IF t_role;
+CREATE TABLE t_role(
+	id VARCHAR(50) PRIMARY KEY , -- uuid
+	role_name VARCHAR(20) , -- 角色名称
+	role_desc VARCHAR(50)  -- 角色描述
+)ENGINE=INNODB DEFAULT CHARSET utf8;
+
+/**
+	权限表
+**/
+DROP TABLE IF EXISTS t_permission;
+CREATE TABLE t_permission(
+	id VARCHAR(50) PRIMARY KEY , -- uuid
+	permission_name VARCHAR(20) , -- 权限名称
+	permission_url VARCHAR(50)  -- 权限资源
+)ENGINE=INNODB DEFAULT CHARSET utf8;
+
+
+/**
+	角色与用户中间表
+**/
+DROP TABLE IF t_role_users;
+CREATE TABLE t_role_usres(
+	id INT PRIMARY KEY AUTO_INCREMENT, 
+	users_id VARCHAR(50) UNIQUE NOT NULL ,
+	role_id VARCHAR(50) UNIQUE NOT NULL,
+	FOREIGN KEY (users_id) REFERENCES t_users(id),
+	FOREIGN KEY (role_id) REFERENCES t_role(id)
+)ENGINE=INNODB DEFAULT CHARSET utf8;
+
+/**
+	权限与角色中间表
+**/
+DROP TABLE IF t_role_permission;
+CREATE TABLE t_role_permission(
+	id INT PRIMARY KEY AUTO_INCREMENT,
+	role_id VARCHAR(50) UNIQUE NOT NULL,
+	permission_id VARCHAR(50) UNIQUE NOT NULL,
+	FOREIGN KEY (role_id) REFERENCES t_role(id),
+	FOREIGN KEY (permission_id) REFERENCES t_permission(id)
+)ENGINE=INNODB DEFAULT CHARSET utf8;
 
