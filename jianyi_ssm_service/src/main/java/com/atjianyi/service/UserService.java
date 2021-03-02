@@ -20,4 +20,9 @@ public interface UserService extends UserDetailsService {
      */
     void saveUser(UserInfo userInfo) throws Exception;
 
+    /**
+     * @param id
+     * @return
+     */
+    UserInfo findUserById(String id) throws Exception;
 }

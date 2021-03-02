@@ -19,5 +19,7 @@ public interface RoleMapper {
      * @param userId
      * @return
      */
-    public List<Role> findRolesByUserId(String userId);
+    public List<Role> findRolesByUserId(String userId) throws Exception;
+
+    List<Role> findRolesAndPermissions(String userId) throws Exception;
 }

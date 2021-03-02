@@ -3,6 +3,7 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.atjianyi.dao.UserMapper">
+
     <resultMap id="baseUserInfoMapper" type="userInfo">
         <id column="id" property="id"/>
         <result column="users_name" property="userName"/>
@@ -12,10 +13,17 @@
         <result column="user_status" property="userStatus"/>
     </resultMap>
 
+<!--登陆时候查询用户角色的mapper-->
     <resultMap id="userInfoMapperAndRoleList" type="userInfo" extends="baseUserInfoMapper">
         <collection column="id" property="roleList"  javaType="java.util.List" select="com.atjianyi.dao.RoleMapper.findRolesByUserId"/>
     </resultMap>
 
+<!--查询用户详细信息的mapper-->
+    <resultMap id="userInfoMapperAndRoles" type="userInfo" extends="baseUserInfoMapper">
+        <collection column="id" property="roleList"  javaType="java.util.List" select="com.atjianyi.dao.RoleMapper.findRolesAndPermissions"/>
+    </resultMap>
+
+<!--  根据名称查询用户  -->
     <select id="findUserByName" resultMap="userInfoMapperAndRoleList" parameterType="string">
         select * from t_users where users_name=#{v}
     </select>
@@ -28,5 +36,9 @@
         insert into t_users(id, users_name, user_email, user_pwd, user_phone_num, user_status) values
         (#{id},#{userName},#{userEmail},#{userPwd},#{userPhoneNum},#{userStatus})
     </insert>
+
+    <select id="findUserById" parameterType="string" resultMap="userInfoMapperAndRoles">
+          select * from t_users where id=#{v}
+    </select>
 
 </mapper>

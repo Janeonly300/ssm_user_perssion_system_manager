@@ -139,20 +139,20 @@
                                 </tr>
                                 </thead>
                                 <tr data-tt-id="0">
-                                    <td colspan="2">${user.username}</td>
+                                    <td colspan="2">${userInfo.userName}</td>
                                 </tr>
 
                                 <tbody>
-                                <c:forEach items="${user.roles}" var="role" varStatus="vs1">
-                                    <tr data-tt-id="${vs1.index+1}" data-tt-parent-id="0"">
+                                <c:forEach items="${userInfo.roleList}" var="role" varStatus="vs1">
+                                    <tr data-tt-id="${vs1.index+1}" data-tt-parent-id="0">
                                         <td>${role.roleName }</td>
                                         <td>${role.roleDesc }</td>
                                     </tr>
-                                    <c:forEach items="${role.permissions}" var="permission" varStatus="vs2">
+                                    <c:forEach items="${role.permissionsList}" var="permission" varStatus="vs2">
                                         <tr data-tt-id="${vs1.index+1}-${vs2.index+1}"
                                             data-tt-parent-id="${vs1.index+1}">
                                             <td>${permission.permissionName}</td>
-                                            <td>${permission.url}</td>
+                                            <td>${permission.permissionUrl}</td>
                                         </tr>
                                     </c:forEach>
                                 </c:forEach>

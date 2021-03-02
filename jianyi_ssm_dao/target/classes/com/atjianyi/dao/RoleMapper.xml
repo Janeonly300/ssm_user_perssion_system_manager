@@ -8,9 +8,23 @@
         <result property="roleName" column="role_name"/>
         <result property="roleDesc" column="role_desc"/>
     </resultMap>
-    
+
+    <resultMap id="roleMapperAndPermissionList" type="role" extends="baseRoleMapper">
+        <collection property="permissionsList" column="id" ofType="permission" select="com.atjianyi.dao.PermissionMapper.findPermissionsByRoleId"/>
+    </resultMap>
+
+    <sql id="baseSql">
+         SELECT * FROM t_role  WHERE id IN(SELECT role_id FROM t_role_usres WHERE users_id = #{v})
+    </sql>
+
+<!--  查询基本的角色信息  -->
     <select id="findRolesByUserId" resultMap="baseRoleMapper" parameterType="string" >
-       SELECT * FROM t_role  WHERE id IN(SELECT role_id FROM t_role_usres WHERE users_id = #{v})
+      <include refid="baseSql"/>
+    </select>
+
+<!--  根据用户id查询详细信息  -->
+    <select id="findRolesAndPermissions" resultMap="roleMapperAndPermissionList" parameterType="string">
+        <include refid="baseSql"/>
     </select>
 
 </mapper>

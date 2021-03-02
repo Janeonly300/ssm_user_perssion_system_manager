@@ -24,4 +24,11 @@ public interface UserMapper {
      * 添加用户
      */
     void insertUser(UserInfo userInfo) throws Exception;
+
+
+    /**
+     * 根据Id查询用户信息
+     * @return
+     */
+    UserInfo findUserById(String userId) throws Exception;
 }

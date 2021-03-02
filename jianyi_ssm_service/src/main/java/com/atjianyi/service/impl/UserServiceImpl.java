@@ -54,6 +54,17 @@ public class UserServiceImpl implements UserService {
     }
 
     /**
+     * 查询用户详细信息
+     * @param id
+     * @return
+     * @throws Exception
+     */
+    @Override
+    public UserInfo findUserById(String id) throws Exception {
+        return userMapper.findUserById(id);
+    }
+
+    /**
      * 登陆验证
      * @param username
      * @return
