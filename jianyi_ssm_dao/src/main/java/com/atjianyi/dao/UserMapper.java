@@ -3,6 +3,8 @@ package com.atjianyi.dao;
 import com.atjianyi.pojo.UserInfo;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 @Repository
 public interface UserMapper {
     /**
@@ -11,4 +13,10 @@ public interface UserMapper {
      * @return
      */
      UserInfo findUserByName(String username) throws Exception;
+
+    /**
+     * 查询所有用户
+     * @return
+     */
+    List<UserInfo> findAllUser();
 }

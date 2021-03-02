@@ -20,4 +20,8 @@
         select * from t_users where users_name=#{v}
     </select>
 
+    <select id="findAllUser" resultMap="baseUserInfoMapper">
+        select * from t_users
+    </select>
+
 </mapper>

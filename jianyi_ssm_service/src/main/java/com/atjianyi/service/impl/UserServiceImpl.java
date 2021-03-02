@@ -27,6 +27,12 @@ public class UserServiceImpl implements UserService {
     private UserMapper userMapper;
 
     @Override
+    public List<UserInfo> findAllUsers() {
+        List<UserInfo> allUser = userMapper.findAllUser();
+        return allUser;
+    }
+
+    @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         System.out.println(username);
         UserInfo userInfo = null;
@@ -36,7 +42,7 @@ public class UserServiceImpl implements UserService {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        User user = new User(userInfo.getUserName(),"{noop}"+userInfo.getUserPwd(), userInfo.getUserStatus() != 0,true,true,true,getAuthority(userInfo.getRoleList()));
+        User user = new User(userInfo.getUserName(),userInfo.getUserPwd(), userInfo.getUserStatus() != 0,true,true,true,getAuthority(userInfo.getRoleList()));
         String password = user.getPassword();
         System.out.println(password);
         return user;
