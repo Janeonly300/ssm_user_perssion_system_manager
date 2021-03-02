@@ -26,11 +26,18 @@ public class UserController {
      * @return
      */
     @RequestMapping("/findAll.do")
-    public ModelAndView findAllUser(){
+    public ModelAndView findAllUser() throws Exception {
         List<UserInfo> allUsers = userService.findAllUsers();
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.addObject("userInfoList",allUsers);
         modelAndView.setViewName("user-list");
         return modelAndView;
+    }
+
+    @RequestMapping("/saveUser.do")
+    public String findAllUser(UserInfo userInfo) throws Exception {
+        userService.saveUser(userInfo);
+        //转发
+        return "redirect:findAll.do";
     }
 }

@@ -120,11 +120,11 @@ CREATE TABLE t_permission(
 /**
 	角色与用户中间表
 **/
-DROP TABLE IF t_role_users;
+DROP TABLE IF EXISTS t_role_usres;
 CREATE TABLE t_role_usres(
 	id INT PRIMARY KEY AUTO_INCREMENT, 
-	users_id VARCHAR(50) UNIQUE NOT NULL ,
-	role_id VARCHAR(50) UNIQUE NOT NULL,
+	users_id VARCHAR(50)  NOT NULL ,
+	role_id VARCHAR(50)  NOT NULL,
 	FOREIGN KEY (users_id) REFERENCES t_users(id),
 	FOREIGN KEY (role_id) REFERENCES t_role(id)
 )ENGINE=INNODB DEFAULT CHARSET utf8;
@@ -132,12 +132,16 @@ CREATE TABLE t_role_usres(
 /**
 	权限与角色中间表
 **/
-DROP TABLE IF t_role_permission;
+DROP TABLE IF EXISTS t_role_permission;
 CREATE TABLE t_role_permission(
 	id INT PRIMARY KEY AUTO_INCREMENT,
-	role_id VARCHAR(50) UNIQUE NOT NULL,
-	permission_id VARCHAR(50) UNIQUE NOT NULL,
+	role_id VARCHAR(50)  NOT NULL,
+	permission_id VARCHAR(50)  NOT NULL,
 	FOREIGN KEY (role_id) REFERENCES t_role(id),
 	FOREIGN KEY (permission_id) REFERENCES t_permission(id)
 )ENGINE=INNODB DEFAULT CHARSET utf8;
+
+
+
+SELECT * FROM t_role  WHERE id IN(SELECT role_id FROM t_role_usres WHERE users_id = '111--22');
 

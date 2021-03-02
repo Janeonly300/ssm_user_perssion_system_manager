@@ -91,7 +91,7 @@
 			</section>
 			<!-- 内容头部 /-->
 
-			<form action="${pageContext.request.contextPath}/user/save.do"
+			<form action="${pageContext.request.contextPath}/user/saveUser.do"
 				method="post">
 				<!-- 正文区域 -->
 				<section class="content"> <!--产品信息-->
@@ -102,28 +102,28 @@
 
 						<div class="col-md-2 title">用户名称</div>
 						<div class="col-md-4 data">
-							<input type="text" class="form-control" name="username"
+							<input type="text" class="form-control" name="userName"
 								placeholder="用户名称" value="">
 						</div>
 						<div class="col-md-2 title">密码</div>
 						<div class="col-md-4 data">
-							<input type="password" class="form-control" name="password"
+							<input type="password" class="form-control" name="userPwd"
 								placeholder="密码" value="">
 						</div>
 						<div class="col-md-2 title">邮箱</div>
 						<div class="col-md-4 data">
-							<input type="text" class="form-control" name="email"
+							<input type="text" class="form-control" name="userEmail"
 								placeholder="邮箱" value="">
 						</div>
 						<div class="col-md-2 title">联系电话</div>
 						<div class="col-md-4 data">
-							<input type="text" class="form-control" name="phoneNum"
+							<input type="text" class="form-control" name="userPhoneNum"
 								placeholder="联系电话" value="">
 						</div>
 						<div class="col-md-2 title">用户状态</div>
 						<div class="col-md-4 data">
 							<select class="form-control select2" style="width: 100%"
-								name="status">
+								name="userStatus">
 								<option value="0" selected="selected">关闭</option>
 								<option value="1">开启</option>
 							</select>

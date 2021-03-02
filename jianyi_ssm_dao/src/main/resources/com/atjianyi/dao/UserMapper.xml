@@ -23,5 +23,10 @@
     <select id="findAllUser" resultMap="baseUserInfoMapper">
         select * from t_users
     </select>
+    
+    <insert id="insertUser" parameterType="userInfo">
+        insert into t_users(id, users_name, user_email, user_pwd, user_phone_num, user_status) values
+        (#{id},#{userName},#{userEmail},#{userPwd},#{userPhoneNum},#{userStatus})
+    </insert>
 
 </mapper>

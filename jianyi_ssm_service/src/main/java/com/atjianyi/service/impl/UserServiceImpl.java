@@ -4,6 +4,7 @@ import com.atjianyi.dao.UserMapper;
 import com.atjianyi.pojo.Role;
 import com.atjianyi.pojo.UserInfo;
 import com.atjianyi.service.UserService;
+import com.atjianyi.utils.PasswordEncoderUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.User;
@@ -14,6 +15,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 /**
  * @author 简一
@@ -26,12 +28,37 @@ public class UserServiceImpl implements UserService {
     @Autowired
     private UserMapper userMapper;
 
+    /**
+     * 查询所有用户
+     * @return
+     * @throws Exception
+     */
     @Override
-    public List<UserInfo> findAllUsers() {
+    public List<UserInfo> findAllUsers() throws Exception {
         List<UserInfo> allUser = userMapper.findAllUser();
         return allUser;
     }
 
+    /**
+     * 保存用户
+     * @param userInfo
+     */
+    @Override
+    public void saveUser(UserInfo userInfo) throws Exception {
+        //设置uuid
+        userInfo.setId(UUID.randomUUID().toString().replace("-",""));
+        //设置密码加密
+        userInfo.setUserPwd(PasswordEncoderUtils.pwdReversToEncode(userInfo.getUserPwd()));
+        //调用dao层存储
+        userMapper.insertUser(userInfo);
+    }
+
+    /**
+     * 登陆验证
+     * @param username
+     * @return
+     * @throws UsernameNotFoundException
+     */
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         System.out.println(username);
@@ -43,11 +70,14 @@ public class UserServiceImpl implements UserService {
             e.printStackTrace();
         }
         User user = new User(userInfo.getUserName(),userInfo.getUserPwd(), userInfo.getUserStatus() != 0,true,true,true,getAuthority(userInfo.getRoleList()));
-        String password = user.getPassword();
-        System.out.println(password);
         return user;
     }
 
+    /**
+     * 获取用户组
+     * @param roleList
+     * @return
+     */
     public List<SimpleGrantedAuthority> getAuthority(List<Role> roleList){
         List<SimpleGrantedAuthority> authorities = new ArrayList<>();
         for (Role role : roleList) {

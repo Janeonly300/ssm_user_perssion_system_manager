@@ -18,5 +18,10 @@ public interface UserMapper {
      * 查询所有用户
      * @return
      */
-    List<UserInfo> findAllUser();
+    List<UserInfo> findAllUser() throws Exception;
+
+    /**
+     * 添加用户
+     */
+    void insertUser(UserInfo userInfo) throws Exception;
 }

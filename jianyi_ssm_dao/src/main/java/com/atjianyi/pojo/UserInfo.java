@@ -11,6 +11,12 @@ import java.util.List;
 public class UserInfo {
     private String id; //uuid
     private String userName;//用户名称
+    private String  userEmail; //邮箱
+    private String userPwd; // 用户密码
+    private String userPhoneNum; //用户电话号码
+    private Integer userStatus; //用户状态
+    private String userStatusStr; //格式化用户状态
+    private List<Role> roleList;//用户角色
 
     public String getUserName() {
         return userName;
@@ -28,12 +34,7 @@ public class UserInfo {
         this.roleList = roleList;
     }
 
-    private String  userEmail; //邮箱
-    private String userPwd; // 用户密码
-    private String userPhoneNum; //用户电话号码
-    private Integer userStatus; //用户状态
-    private String userStatusStr; //格式化用户状态
-    private List<Role> roleList;//用户角色
+
 
     @Override
     public String toString() {
