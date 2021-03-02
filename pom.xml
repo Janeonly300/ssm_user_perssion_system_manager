@@ -24,6 +24,7 @@
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
         <spring.version>5.2.2.RELEASE</spring.version>
+        <spring-sercuirty.version>5.1.5.RELEASE</spring-sercuirty.version>
         <slf4j.version>1.6.6</slf4j.version>
         <mysql.version>5.1.6</mysql.version>
         <mybatis.version>3.4.5</mybatis.version>
@@ -141,8 +142,6 @@
             <artifactId>druid</artifactId>
             <version>1.2.5</version>
         </dependency>
-
-
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-core</artifactId>
@@ -158,6 +157,29 @@
             <artifactId>jackson-annotations</artifactId>
             <version>2.9.5</version>
         </dependency>
+<!--Spring security-->
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-web</artifactId>
+            <version>${spring-sercuirty.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-config</artifactId>
+            <version>${spring-sercuirty.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-core</artifactId>
+            <version>${spring-sercuirty.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-taglibs</artifactId>
+            <version>${spring-sercuirty.version}</version>
+        </dependency>
+
     </dependencies>
 
 
