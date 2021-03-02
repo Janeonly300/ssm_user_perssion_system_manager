@@ -4,6 +4,7 @@ package com.atjianyi.pojo;
  * @author 简一
  * @className Traveller
  * @Date 2021/2/22 15:42
+ * 旅客表
  **/
 public class Traveller {
     private String id;//uuid

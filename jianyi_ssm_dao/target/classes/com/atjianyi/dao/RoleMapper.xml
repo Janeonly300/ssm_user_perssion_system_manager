@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.atjianyi.dao.RoleMapper">
+    <resultMap id="baseRoleMapper" type="role">
+        <id property="id" column="id"/>
+        <result property="roleName" column="role_name"/>
+        <result property="roleDesc" column="role_desc"/>
+    </resultMap>
+    
+    <select id="findRolesByUserId" resultMap="baseRoleMapper" parameterType="string" >
+       SELECT * FROM t_role  WHERE id IN(SELECT role_id FROM t_role_usres WHERE users_id = #{v})
+    </select>
+
+</mapper>

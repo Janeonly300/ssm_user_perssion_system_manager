@@ -2,7 +2,12 @@ com\atjianyi\dao\OrdersMapper.class
 com\atjianyi\pojo\Product.class
 com\atjianyi\pojo\Orders.class
 com\atjianyi\dao\ProductMapper.class
+com\atjianyi\pojo\UserInfo.class
+com\atjianyi\pojo\Role.class
 com\atjianyi\dao\TravellerMapper.class
 com\atjianyi\dao\MemberMapper.class
+com\atjianyi\pojo\Permission.class
 com\atjianyi\pojo\Member.class
+com\atjianyi\dao\RoleMapper.class
+com\atjianyi\dao\UserMapper.class
 com\atjianyi\pojo\Traveller.class

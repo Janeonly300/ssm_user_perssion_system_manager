@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.atjianyi.dao.UserMapper">
+    <resultMap id="baseUserInfoMapper" type="userInfo">
+        <id column="id" property="id"/>
+        <result column="users_name" property="userName"/>
+        <result column="user_email" property="userEmail"/>
+        <result column="user_pwd" property="userPwd"/>
+        <result column="user_phone_num" property="userPhoneNum"/>
+        <result column="user_status" property="userStatus"/>
+    </resultMap>
+
+    <resultMap id="userInfoMapperAndRoleList" type="userInfo" extends="baseUserInfoMapper">
+        <collection column="id" property="roleList"  javaType="java.util.List" select="com.atjianyi.dao.RoleMapper.findRolesByUserId"/>
+    </resultMap>
+
+    <select id="findUserByName" resultMap="userInfoMapperAndRoleList" parameterType="string">
+        select * from t_users where users_name=#{v}
+    </select>
+
+</mapper>
