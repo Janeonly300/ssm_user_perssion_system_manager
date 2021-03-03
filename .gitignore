@@ -22,6 +22,8 @@
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
 
-*/target
+/*/target
 .idea
-/jianyi_ssm_web/
+
+/jianyi_ssm_service/target/
+/jianyi_ssm_dao/target/
