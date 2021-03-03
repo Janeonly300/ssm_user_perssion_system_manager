@@ -27,4 +27,9 @@
         <include refid="baseSql"/>
     </select>
 
+<!--  查询所有角色信息  -->
+    <select id="findAllRoles" resultMap="baseRoleMapper">
+        select * from t_role
+    </select>
+
 </mapper>

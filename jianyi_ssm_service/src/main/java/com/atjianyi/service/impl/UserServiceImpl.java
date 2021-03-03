@@ -5,6 +5,7 @@ import com.atjianyi.pojo.Role;
 import com.atjianyi.pojo.UserInfo;
 import com.atjianyi.service.UserService;
 import com.atjianyi.utils.PasswordEncoderUtils;
+import com.github.pagehelper.PageHelper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.User;
@@ -34,7 +35,22 @@ public class UserServiceImpl implements UserService {
      * @throws Exception
      */
     @Override
+    @Deprecated
     public List<UserInfo> findAllUsers() throws Exception {
+        List<UserInfo> allUser = userMapper.findAllUser();
+        return allUser;
+    }
+
+    /**
+     * 分页查询用户
+     * @param curPage
+     * @param size
+     * @return
+     * @throws Exception
+     */
+    @Override
+    public List<UserInfo> findAllUsersByPage(int curPage,int size)throws Exception{
+        PageHelper.startPage(curPage,size);
         List<UserInfo> allUser = userMapper.findAllUser();
         return allUser;
     }

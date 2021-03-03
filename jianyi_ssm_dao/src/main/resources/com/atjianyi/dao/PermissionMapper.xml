@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.atjianyi.dao.PermissionMapper">
+    <resultMap id="basePermission" type="permission">
+        <id property="id" column="id"/>
+        <result property="permissionName" column="permission_name"/>
+        <result property="permissionUrl" column="permission_url"/>
+    </resultMap>
+
+    <select id="findPermissionsByRoleId" resultMap="basePermission" parameterType="string">
+        select * from t_permission where id in(select permission_id from t_role_permission where role_id = #{v});
+    </select>
+
+</mapper>

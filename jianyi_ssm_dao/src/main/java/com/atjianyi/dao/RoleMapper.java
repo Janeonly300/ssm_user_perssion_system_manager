@@ -14,6 +14,8 @@ import java.util.List;
 @Repository
 public interface RoleMapper {
 
+    public List<Role> findAllRoles();
+
     /**
      * 根据用户id查询角色
      * @param userId
@@ -21,5 +23,11 @@ public interface RoleMapper {
      */
     public List<Role> findRolesByUserId(String userId) throws Exception;
 
+    /**
+     * 根据用户id查询角色(详情查询：包括查询权限信息)
+     * @param userId
+     * @return
+     * @throws Exception
+     */
     List<Role> findRolesAndPermissions(String userId) throws Exception;
 }

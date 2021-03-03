@@ -79,13 +79,13 @@
 			<!-- 内容头部 -->
 			<section class="content-header">
 			<h1>
-				用户管理 <small>全部用户</small>
+				角色管理 <small>全部角色</small>
 			</h1>
 			<ol class="breadcrumb">
 				<li><a href="${pageContext.request.contextPath}/index.jsp"><i
 						class="fa fa-dashboard"></i> 首页</a></li>
 				<li><a
-					href="${pageContext.request.contextPath}/user/findAll.do">用户管理</a></li>
+					href="${pageContext.request.contextPath}/role/findAllRoles.do">角色管理</a></li>
 
 				<li class="active">全部用户</li>
 			</ol>
@@ -136,26 +136,22 @@
 											id="selall" type="checkbox" class="icheckbox_square-blue">
 										</th>
 										<th class="sorting_asc">ID</th>
-										<th class="sorting_desc">用户名</th>
-										<th class="sorting_asc sorting_asc_disabled">邮箱</th>
-										<th class="sorting_desc sorting_desc_disabled">联系电话</th>
-										<th class="sorting">状态</th>
+										<th class="sorting_desc">角色名称</th>
+										<th class="sorting_asc sorting_asc_disabled">角色描述</th>
 										<th class="text-center">操作</th>
 									</tr>
 								</thead>
 								<tbody>
 
-									<c:forEach items="${userPage.list}" var="user">
+									<c:forEach items="${allRoles}" var="role">
 										<tr>
 											<td><input name="ids" type="checkbox"></td>
-											<td>${user.id }</td>
-											<td>${user.userName }</td>
-											<td>${user.userEmail }</td>
-											<td>${user.userPhoneNum }</td>
-											<td>${user.userStatusStr }</td>
+											<td>${role.id }</td>
+											<td>${role.roleName }</td>
+											<td>${role.roleDesc }</td>
 											<td class="text-center">
-												<a href="${pageContext.request.contextPath}/user/findUserById.do?id=${user.id}" class="btn bg-olive btn-xs">详情</a>
-												<a href="${pageContext.request.contextPath}/user/findUserByIdAndAllRole.do?id=${user.id}" class="btn bg-olive btn-xs">添加角色</a>
+												<a href="${pageContext.request.contextPath}/user/findUserById.do?id=${role.id}" class="btn bg-olive btn-xs">详情</a>
+												<a href="${pageContext.request.contextPath}/user/findUserByIdAndAllRole.do?id=${role.id}" class="btn bg-olive btn-xs">添加权限</a>
 											</td>
 										</tr>
 									</c:forEach>
@@ -183,8 +179,7 @@
 					<div class="box-footer">
 						<div class="pull-left">
 							<div class="form-group form-inline">
-								总共${userPage.pages} 页，共${userPage.total} 条数据。 每页
-								<select class="form-control" id="userPageSize" onchange="changePageSize()">
+								总共2 页，共14 条数据。 每页 <select class="form-control">
 									<option>1</option>
 									<option>2</option>
 									<option>3</option>
@@ -196,15 +191,17 @@
 
 						<div class="box-tools pull-right">
 							<ul class="pagination">
-								<li><a href="${pageContext.request.contextPath}/user/findAllByPage.do?curPage=1&size=${userPage.pageSize}" aria-label="Previous">首页</a></li>
-								<li><a href="${pageContext.request.contextPath}/user/findAllByPage.do?curPage=${userPage.pageNum-1}&size=${userPage.pageSize}">上一页</a></li>
-								<c:forEach begin="1" end="${userPage.pages}" var="i">
-									<li><a href="${pageContext.request.contextPath}/user/findAllByPage.do?curPage=${i}&size=${userPage.pageSize}">${i}</a></li>
-								</c:forEach>
+								<li><a href="#" aria-label="Previous">首页</a></li>
+								<li><a href="#">上一页</a></li>
+								<li><a href="#">1</a></li>
+								<li><a href="#">2</a></li>
+								<li><a href="#">3</a></li>
+								<li><a href="#">4</a></li>
+								<li><a href="#">5</a></li>
 								<li><a href="#">下一页</a></li>
 								<li><a href="#" aria-label="Next">尾页</a></li>
 							</ul>
-					</div>
+						</div>
 
 					</div>
 					<!-- /.box-footer-->
@@ -279,12 +276,6 @@
 		<script src="../plugins/ionslider/ion.rangeSlider.min.js"></script>
 		<script src="../plugins/bootstrap-slider/bootstrap-slider.js"></script>
 		<script>
-			function changePageSize(){
-				var pageSize = $("#userPageSize").val();
-
-				location.href ="${pageContext.request.contextPath}/user/findAllByPage.do?curPage=${userPage.pageNum}&size="+pageSize+"";
-			}
-
 			$(document).ready(function() {
 				// 选择框
 				$(".select2").select2();

@@ -12,7 +12,18 @@ public interface UserService extends UserDetailsService {
      * @return
      * @throws Exception
      */
+    @Deprecated
     List<UserInfo> findAllUsers() throws Exception;
+
+
+    /**
+     * 分页查询
+     * @param curPage
+     * @param size
+     * @return
+     * @throws Exception
+     */
+    List<UserInfo> findAllUsersByPage(int curPage,int size) throws Exception;
 
     /**
      * 添加用户
