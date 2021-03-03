@@ -4,7 +4,7 @@ import com.atjianyi.pojo.Role;
 import com.atjianyi.service.RoleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
+
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -28,5 +28,12 @@ public class RoleController {
         modelAndView.addObject("allRoles",allRoles);
         modelAndView.setViewName("role-list");
         return modelAndView;
+    }
+
+    @RequestMapping("/save.do")
+    public String saveRole(Role role) throws Exception {
+        roleService.saveRole(role);
+
+        return "redirect:findAllRoles.do";
     }
 }

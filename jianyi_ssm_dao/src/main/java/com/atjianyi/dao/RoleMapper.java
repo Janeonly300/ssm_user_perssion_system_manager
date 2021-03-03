@@ -14,6 +14,10 @@ import java.util.List;
 @Repository
 public interface RoleMapper {
 
+    /**
+     * 查询所有角色
+     * @return
+     */
     public List<Role> findAllRoles();
 
     /**
@@ -30,4 +34,10 @@ public interface RoleMapper {
      * @throws Exception
      */
     List<Role> findRolesAndPermissions(String userId) throws Exception;
+
+    /**
+     * 添加一个角色
+     * @param role
+     */
+    void insertRoles(Role role) throws Exception;
 }
