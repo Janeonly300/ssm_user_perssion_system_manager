@@ -1,4 +1,7 @@
 com\atjianyi\controller\RoleController.class
 com\atjianyi\controller\UserController.class
 com\atjianyi\controller\OrdersController.class
+com\atjianyi\controller\LogAop.class
+com\atjianyi\controller\PermissionController.class
+com\atjianyi\controller\SystemLogController.class
 com\atjianyi\controller\ProductController.class

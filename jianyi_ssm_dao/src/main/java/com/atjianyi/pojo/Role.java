@@ -64,4 +64,6 @@ public class Role {
     public void setPermissionsList(List<Permission> permissionsList) {
         this.permissionsList = permissionsList;
     }
+
+
 }

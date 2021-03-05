@@ -1,5 +1,6 @@
 package com.atjianyi.service;
 
+import com.atjianyi.pojo.Role;
 import com.atjianyi.pojo.UserInfo;
 import org.springframework.security.core.userdetails.UserDetailsService;
 
@@ -36,4 +37,13 @@ public interface UserService extends UserDetailsService {
      * @return
      */
     UserInfo findUserById(String id) throws Exception;
+
+    /**
+     * findOtherRoles
+     * @param id
+     * @return
+     */
+    List<Role> findOtherRoles(String id);
+
+    void saveRolesToUser(String userId,String[] roleIds);
 }

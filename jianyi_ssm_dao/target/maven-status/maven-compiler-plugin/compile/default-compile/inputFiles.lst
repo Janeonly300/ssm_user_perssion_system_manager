@@ -1,10 +1,12 @@
 D:\javawebStudy\ssm_user_perssion_system_manager\jianyi_ssm_dao\src\main\java\com\atjianyi\dao\OrdersMapper.java
 D:\javawebStudy\ssm_user_perssion_system_manager\jianyi_ssm_dao\src\main\java\com\atjianyi\pojo\Member.java
+D:\javawebStudy\ssm_user_perssion_system_manager\jianyi_ssm_dao\src\main\java\com\atjianyi\pojo\SystemLog.java
 D:\javawebStudy\ssm_user_perssion_system_manager\jianyi_ssm_dao\src\main\java\com\atjianyi\pojo\Traveller.java
 D:\javawebStudy\ssm_user_perssion_system_manager\jianyi_ssm_dao\src\main\java\com\atjianyi\dao\MemberMapper.java
 D:\javawebStudy\ssm_user_perssion_system_manager\jianyi_ssm_dao\src\main\java\com\atjianyi\dao\PermissionMapper.java
 D:\javawebStudy\ssm_user_perssion_system_manager\jianyi_ssm_dao\src\main\java\com\atjianyi\pojo\UserInfo.java
 D:\javawebStudy\ssm_user_perssion_system_manager\jianyi_ssm_dao\src\main\java\com\atjianyi\pojo\Product.java
+D:\javawebStudy\ssm_user_perssion_system_manager\jianyi_ssm_dao\src\main\java\com\atjianyi\dao\SystemLogMapper.java
 D:\javawebStudy\ssm_user_perssion_system_manager\jianyi_ssm_dao\src\main\java\com\atjianyi\pojo\Role.java
 D:\javawebStudy\ssm_user_perssion_system_manager\jianyi_ssm_dao\src\main\java\com\atjianyi\pojo\Permission.java
 D:\javawebStudy\ssm_user_perssion_system_manager\jianyi_ssm_dao\src\main\java\com\atjianyi\dao\UserMapper.java

@@ -79,15 +79,15 @@
 			<!-- 内容头部 -->
 			<section class="content-header">
 			<h1>
-				角色管理 <small>全部角色</small>
+				日志管理 <small>全部日志</small>
 			</h1>
 			<ol class="breadcrumb">
 				<li><a href="${pageContext.request.contextPath}/index.jsp"><i
 						class="fa fa-dashboard"></i> 首页</a></li>
 				<li><a
-					href="${pageContext.request.contextPath}/role/findAllRoles.do">角色管理</a></li>
+					href="${pageContext.request.contextPath}/systemLog/findAllLog.do">资源权限管理</a></li>
 
-				<li class="active">全部用户</li>
+				<li class="active">全部日志</li>
 			</ol>
 			</section>
 			<!-- 内容头部 /-->
@@ -108,7 +108,7 @@
 							<div class="pull-left">
 								<div class="form-group form-inline">
 									<div class="btn-group">
-										<button type="button" class="btn btn-default" title="新建" onclick="location.href='${pageContext.request.contextPath}/pages/role-add.jsp'">
+										<button type="button" class="btn btn-default" title="新建" onclick="location.href='${pageContext.request.contextPath}/pages/permission-add.jsp'">
 											<i class="fa fa-file-o"></i> 新建
 										</button>
 										
@@ -136,23 +136,30 @@
 											id="selall" type="checkbox" class="icheckbox_square-blue">
 										</th>
 										<th class="sorting_asc">ID</th>
-										<th class="sorting_desc">角色名称</th>
-										<th class="sorting_asc sorting_asc_disabled">角色描述</th>
+										<th class="sorting_desc">访问时间</th>
+										<th class="sorting_asc sorting_asc_disabled">姓名</th>
+										<th class="text-center">IP</th>
+										<th class="text-center">访问URL</th>
+										<th class="text-center">方法</th>
+										<th class="text-center">ms</th>
 										<th class="text-center">操作</th>
 									</tr>
 								</thead>
 								<tbody>
 
-									<c:forEach items="${allRoles}" var="role">
+									<c:forEach items="${logs}" var="log">
 										<tr>
 											<td><input name="ids" type="checkbox"></td>
-											<td>${role.id }</td>
-											<td>${role.roleName }</td>
-											<td>${role.roleDesc }</td>
+											<td>${log.id }</td>
+											<td>${log.systemLogVisitTimeStr }</td>
+											<td>${log.systemLogUserName }</td>
+											<td>${log.systemLogIp }</td>
+											<td>${log.systemLogUrl }</td>
+											<td>${log.systemLogMethod }</td>
+											<td>${log.systemLogExecutionTime }</td>
 											<td class="text-center">
-												<a href="${pageContext.request.contextPath}/role/findRoleById.do?id=${role.id}" class="btn bg-olive btn-xs">详情</a>
-												<a href="${pageContext.request.contextPath}/role/deleteRoleById.do?id=${role.id}" class="btn bg-olive btn-xs">删除角色</a>
-												<a href="${pageContext.request.contextPath}/role/findRoleAndOtherPermission.do?id=${role.id}" class="btn bg-olive btn-xs">添加权限</a>
+												<a href="${pageContext.request.contextPath}/permission/findPermissionById.do?id=${permission.id}" class="btn bg-olive btn-xs">详情</a>
+												<a href="${pageContext.request.contextPath}/permission/deletePermission.do?id=${permission.id}" class="btn bg-olive btn-xs">删除角色</a>
 											</td>
 										</tr>
 									</c:forEach>

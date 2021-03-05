@@ -41,4 +41,13 @@
           select * from t_users where id=#{v}
     </select>
 
+<!-- 根据用户id查询其不拥有的角色  -->
+    <select id="selectOtherRoles" parameterType="string" resultMap="com.atjianyi.dao.RoleMapper.baseRoleMapper">
+        select * from t_role where id not in(select role_id from t_role_usres where users_id = #{v})
+    </select>
+
+    <insert id="insertRolesToUser">
+        insert into t_role_usres(users_id, role_id) value(#{userId},#{roleId});
+    </insert>
+
 </mapper>

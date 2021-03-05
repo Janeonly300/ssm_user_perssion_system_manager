@@ -142,6 +142,23 @@ CREATE TABLE t_role_permission(
 )ENGINE=INNODB DEFAULT CHARSET utf8;
 
 
+/**
+	SysLog
+**/
+DROP TABLE IF EXISTS t_systemlog;
+CREATE TABLE t_systemlog(
+	id INT PRIMARY KEY AUTO_INCREMENT,
+	systemlog_visit_time DATETIME NOT NULL,  -- 访问时间
+	systemlog_user_name VARCHAR(50),-- 访问的用户名
+	systemlog_ip VARCHAR(50), -- IP
+	systemlog_url VARCHAR(50),-- URL
+	systemlog_method VARCHAR(50), -- 方法
+	systemlog_execution_time LONG  -- 执行的时间
+)ENGINE=INNODB DEFAULT CHARSET utf8;
+
 
 SELECT * FROM t_role  WHERE id IN(SELECT role_id FROM t_role_usres WHERE users_id = '111--22');
 
+SELECT * FROM t_role WHERE id NOT IN(SELECT role_id FROM t_role_usres WHERE users_id = '111--2');
+
+SELECT * FROM t_role WHERE id = '23--43'

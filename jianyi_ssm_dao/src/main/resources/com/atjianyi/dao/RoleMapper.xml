@@ -37,4 +37,31 @@
         insert into t_role(id, role_name, role_desc) values (#{id},#{roleName},#{roleDesc})
     </insert>
 
+<!--  查询角色详情  -->
+    <select id="selectRoleById" parameterType="string" resultMap="roleMapperAndPermissionList">
+        select * from t_role where id = #{v}
+    </select>
+
+<!-- 根据RoleIdUser与Role关联   -->
+    <delete id="deleteRoleAndUserById" parameterType="string">
+        delete from t_role_usres where role_id = #{v}
+    </delete>
+
+<!--  根据roleIdPermission与role的关联  -->
+    <delete id="deleteRoleAndPermissionById" parameterType="string">
+        delete from t_role_permission where role_id = #{v}
+    </delete>
+
+<!--  根据id删除role  -->
+    <delete id="deleteRoleById" parameterType="string">
+        delete from t_role where id = #{v}
+    </delete>
+
+    <select id="selectOtherPermissionByRoleId" resultMap="com.atjianyi.dao.PermissionMapper.basePermission" parameterType="string">
+        select * from t_permission where id not in(select permission_id from t_role_permission where role_id = #{v})
+    </select>
+
+    <insert id="insertPermissionToRole">
+        insert into t_role_permission (role_id, permission_id) value (#{roleId},#{permissionId})
+    </insert>
 </mapper>

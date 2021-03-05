@@ -81,6 +81,31 @@ public class UserServiceImpl implements UserService {
     }
 
     /**
+     * 查询该用户id不存在角色
+     * @param id
+     * @return
+     */
+    @Override
+    public List<Role> findOtherRoles(String id) {
+        return userMapper.selectOtherRoles(id);
+    }
+
+    /**
+     * 为用户添加角色
+     * @param userId
+     * @param roleIds
+     */
+    @Override
+    public void saveRolesToUser(String userId, String[] roleIds) {
+        //循环添加多个
+        for (String roleId : roleIds) {
+            userMapper.insertRolesToUser(userId,roleId);
+        }
+
+    }
+
+
+    /**
      * 登陆验证
      * @param username
      * @return
@@ -88,7 +113,6 @@ public class UserServiceImpl implements UserService {
      */
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        System.out.println(username);
         UserInfo userInfo = null;
         try {
             userInfo = userMapper.findUserByName(username);

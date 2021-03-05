@@ -9,8 +9,34 @@
         <result property="permissionUrl" column="permission_url"/>
     </resultMap>
 
+
+
     <select id="findPermissionsByRoleId" resultMap="basePermission" parameterType="string">
         select * from t_permission where id in(select permission_id from t_role_permission where role_id = #{v});
     </select>
 
+<!--  查询所有权限  -->
+    <select id="selectAllPermission" resultMap="basePermission">
+        select * from t_permission;
+    </select>
+
+    <!--添加权限信息-->
+    <insert id="insertPermission" parameterType="permission">
+        insert into t_permission(id, permission_name, permission_url) values (#{id},#{permissionName},#{permissionUrl})
+    </insert>
+
+<!-- 查询权限详细Id   -->
+    <select id="findPermissionById" parameterType="string" resultMap="basePermission">
+        select * from t_permission where id = #{v};
+    </select>
+
+<!-- 根据权限Id删除角色与权限的关系  -->
+    <delete id="deletePermissionWithRole" parameterType="string">
+        delete from t_role_permission where permission_id = #{v}
+    </delete>
+
+<!-- 根据id删除角色  -->
+    <delete id="deletePermissionById" parameterType="string">
+        delete from t_permission where id = #{v}
+    </delete>
 </mapper>

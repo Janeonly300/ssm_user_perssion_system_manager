@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.atjianyi.dao.SystemLogMapper">
+    <resultMap id="baseLogMapper" type="systemLog">
+        <id column="id" property="id"/>
+        <result column="systemlog_visit_time" property="systemLogVisitTime"/>
+        <result column="systemlog_user_name" property="systemLogUserName"/>
+        <result column="systemlog_ip" property="systemLogIp"/>
+        <result column="systemlog_url" property="systemLogUrl"/>
+        <result column="systemlog_method" property="systemLogMethod"/>
+        <result column="systemlog_execution_time" property="systemLogExecutionTime"/>
+    </resultMap>
+
+    <insert id="insertIntoSystemLog" parameterType="systemLog">
+        insert into t_systemlog(systemlog_visit_time, systemlog_user_name, systemlog_ip, systemlog_url, systemlog_method, systemlog_execution_time)
+        VALUES(#{systemLogVisitTime},#{systemLogUserName},#{systemLogIp},#{systemLogUrl},#{systemLogMethod},#{systemLogExecutionTime})
+    </insert>
+
+    <select id="selectAllLogs" resultMap="baseLogMapper">
+        select * from t_systemlog;
+    </select>
+
+</mapper>

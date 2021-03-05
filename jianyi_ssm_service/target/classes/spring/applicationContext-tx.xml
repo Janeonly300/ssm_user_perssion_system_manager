@@ -36,4 +36,5 @@
         <aop:pointcut id="p1" expression="execution(* com.atjianyi.service.impl.*.*(..))"/>
         <aop:advisor advice-ref="advic" pointcut-ref="p1"/>
     </aop:config>
+
 </beans>

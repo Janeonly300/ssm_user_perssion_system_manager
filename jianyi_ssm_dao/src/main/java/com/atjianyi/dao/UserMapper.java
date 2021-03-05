@@ -1,6 +1,8 @@
 package com.atjianyi.dao;
 
+import com.atjianyi.pojo.Role;
 import com.atjianyi.pojo.UserInfo;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -31,4 +33,18 @@ public interface UserMapper {
      * @return
      */
     UserInfo findUserById(String userId) throws Exception;
+
+    /**
+     * 根据用户id查询其不拥有的角色
+     * @param userId
+     * @return
+     */
+    List<Role> selectOtherRoles(String userId);
+
+    /**
+     * 为用户添加角色
+     * @param userId
+     * @param roleId
+     */
+    void insertRolesToUser(@Param("userId") String userId, @Param("roleId") String roleId);
 }

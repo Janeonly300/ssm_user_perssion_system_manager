@@ -1,8 +1,12 @@
-com\atjianyi\service\impl\OrdersServiceImpl.class
-com\atjianyi\service\impl\ProductServiceImpl.class
-com\atjianyi\service\OrdersService.class
 com\atjianyi\service\ProductService.class
 com\atjianyi\service\impl\RoleServiceImpl.class
-com\atjianyi\service\RoleService.class
 com\atjianyi\service\impl\UserServiceImpl.class
 com\atjianyi\service\UserService.class
+com\atjianyi\service\impl\OrdersServiceImpl.class
+com\atjianyi\service\PermissionService.class
+com\atjianyi\service\impl\PermissionServiceImpl.class
+com\atjianyi\service\impl\ProductServiceImpl.class
+com\atjianyi\service\OrdersService.class
+com\atjianyi\service\SystemLogService.class
+com\atjianyi\service\impl\SystemLogServiceImpl.class
+com\atjianyi\service\RoleService.class
